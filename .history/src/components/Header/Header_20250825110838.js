@@ -14,6 +14,7 @@ const Header = () => {
         <nav className="nav">
           <a href="#generators">Generators</a>
           <a href="#about">About</a>
+          <a href="#saved">Saved Ideas</a>
         </nav>
       </div>
     </header>

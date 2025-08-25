@@ -3,23 +3,12 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-  const words = [
-    'Mechanics', 'Enemies', 'Worlds', 'Quests', 'Items', 'Bosses',
-    'Genres', 'NPCs', 'Themes', 'Art Styles', 'Power-Ups', 'Motivations',
-    'Loops', 'Emotions', 'Strategies'
-  ];
+  const words = ['Mechanics', 'Enemies', 'Worlds', 'Quests', 'Items'];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsVisible(false); // Start fade out
-      
-      setTimeout(() => {
-        setCurrentWord((prev) => (prev + 1) % words.length);
-        setIsVisible(true); // Start fade in
-      }, 300); // Wait for fade out to complete
-    }, 2500);
-    
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -27,17 +16,15 @@ const HeroSection = () => {
     <section className="hero">
       <div className="hero-content">
         <h2 className="hero-title">
-          Generate Random{' '}
-          <span className={`rotating-word ${isVisible ? 'visible' : 'hidden'}`}>
-            {words[currentWord]}
-          </span>
+          Generate Random
+          <span className="rotating-word"> {words[currentWord]}</span>
         </h2>
         <p className="hero-subtitle">
           Break through creative blocks with instant game development inspiration
         </p>
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-number">16+</span>
+            <span className="stat-number">15+</span>
             <span className="stat-label">Generators</span>
           </div>
           <div className="stat">

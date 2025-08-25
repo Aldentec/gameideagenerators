@@ -5,7 +5,6 @@ import './GeneratorsSection.css';
 
 const GeneratorsSection = () => {
   const randomizerData = [
-    // Original 9 generators
     {
       title: 'Genre Mashup',
       icon: '🎮',
@@ -68,56 +67,6 @@ const GeneratorsSection = () => {
       description: 'Thematic constraints for game jams',
       generator: generators.gameJamTheme,
       color: '#FFDAB9'
-    },
-    // New 7 generators
-    {
-      title: 'Art Style',
-      icon: '🎨',
-      description: 'Visual aesthetics and artistic direction',
-      generator: generators.artStyle,
-      color: '#FFB347'
-    },
-    {
-      title: 'Gameplay Loop',
-      icon: '🔄',
-      description: 'Core game flow and progression patterns',
-      generator: generators.gameplayLoop,
-      color: '#87CEEB'
-    },
-    {
-      title: 'Emotional Theme',
-      icon: '❤️',
-      description: 'Deep narrative themes and emotional arcs',
-      generator: generators.emotionalTheme,
-      color: '#DDA0DD'
-    },
-    {
-      title: 'Player Motivation',
-      icon: '🎯',
-      description: 'Character-driven story motivations',
-      generator: generators.playerMotivation,
-      color: '#98FB98'
-    },
-    {
-      title: 'Power-Up Ideas',
-      icon: '⚡',
-      description: 'Temporary abilities and power boosts',
-      generator: generators.powerUp,
-      color: '#F0E68C'
-    },
-    {
-      title: 'Game Feel',
-      icon: '✨',
-      description: 'Polish elements and satisfying interactions',
-      generator: generators.gameFeel,
-      color: '#FFA07A'
-    },
-    {
-      title: 'Monetization',
-      icon: '💰',
-      description: 'Business models and revenue strategies',
-      generator: generators.monetization,
-      color: '#20B2AA'
     }
   ];
 

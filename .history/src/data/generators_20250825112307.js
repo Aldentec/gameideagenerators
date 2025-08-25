@@ -518,7 +518,7 @@ const generators = {
       'Achievement-based pricing reductions'
     ];
     return models[Math.floor(Math.random() * models.length)];
-  },
+  }
 
   artStyle: () => {
     const styles = [

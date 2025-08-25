@@ -7,7 +7,7 @@ const HeroSection = () => {
   const words = [
     'Mechanics', 'Enemies', 'Worlds', 'Quests', 'Items', 'Bosses',
     'Genres', 'NPCs', 'Themes', 'Art Styles', 'Power-Ups', 'Motivations',
-    'Loops', 'Emotions', 'Strategies'
+    'Loops', 'Emotions', 'Strategies', 'Polish'
   ];
 
   useEffect(() => {

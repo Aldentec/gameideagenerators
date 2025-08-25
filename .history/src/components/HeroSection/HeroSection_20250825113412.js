@@ -4,11 +4,7 @@ import './HeroSection.css';
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const words = [
-    'Mechanics', 'Enemies', 'Worlds', 'Quests', 'Items', 'Bosses',
-    'Genres', 'NPCs', 'Themes', 'Art Styles', 'Power-Ups', 'Motivations',
-    'Loops', 'Emotions', 'Strategies'
-  ];
+  const words = ['Mechanics', 'Enemies', 'Worlds', 'Quests', 'Items'];
 
   useEffect(() => {
     const interval = setInterval(() => {
