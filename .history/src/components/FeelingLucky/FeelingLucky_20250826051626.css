@@ -1,0 +1,338 @@
+.feeling-lucky-section {
+  padding: 4rem 2rem;
+  margin-top:20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #e0e0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feeling-lucky-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.1) rotate(180deg); opacity: 0.8; }
+}
+
+.feeling-lucky-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.feeling-lucky-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.feeling-lucky-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feeling-lucky-header p {
+  font-size: 1.2rem;
+  color: #b0b0c0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lucky-button-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.lucky-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+.lucky-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.lucky-button:hover::before {
+  left: 100%;
+}
+
+.lucky-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 48px rgba(102, 126, 234, 0.4);
+}
+
+.lucky-button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.lucky-button.generating {
+  animation: generatePulse 0.8s ease-in-out infinite;
+}
+
+@keyframes generatePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.lucky-icon, .lucky-sparkles {
+  font-size: 1.5rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+.lucky-sparkles {
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.lucky-text {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+}
+
+.results-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.results-grid.generating {
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+
+.lucky-result-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lucky-result-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.lucky-result-card:hover::before {
+  transform: scaleX(1);
+}
+
+.lucky-result-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.result-header {
+  margin-bottom: 1rem;
+}
+
+.result-header h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.generator-name {
+  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 600;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+.result-content {
+  color: #c0c0d0;
+  line-height: 1.6;
+}
+
+.result-content p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.lucky-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.regenerate-button, .share-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.regenerate-button {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.regenerate-button:hover {
+  background: rgba(102, 126, 234, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.share-button {
+  background: rgba(240, 147, 251, 0.2);
+  color: #f093fb;
+  border: 1px solid rgba(240, 147, 251, 0.3);
+}
+
+.share-button:hover {
+  background: rgba(240, 147, 251, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .feeling-lucky-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .feeling-lucky-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .feeling-lucky-header p {
+    font-size: 1.1rem;
+  }
+  
+  .lucky-button {
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+    gap: 0.75rem;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .lucky-result-card {
+    padding: 1.25rem;
+  }
+  
+  .lucky-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .regenerate-button, .share-button {
+    width: 200px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .feeling-lucky-section {
+    padding: 2rem 1rem;
+  }
+  
+  .feeling-lucky-header h2 {
+    font-size: 2rem;
+  }
+  
+  .feeling-lucky-header p {
+    font-size: 1rem;
+  }
+  
+  .lucky-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .lucky-icon, .lucky-sparkles {
+    font-size: 1.2rem;
+  }
+  
+  .lucky-result-card {
+    padding: 1rem;
+  }
+  
+  .result-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .generator-name {
+    font-size: 0.8rem;
+  }
+  
+  .result-content p {
+    font-size: 0.9rem;
+  }
+}

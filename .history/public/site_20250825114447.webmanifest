@@ -1,0 +1,93 @@
+{
+  "name": "Game Idea Generators",
+  "short_name": "GameIdeaGen",
+  "description": "Free random generators for game developers. Create unique game mechanics, enemies, biomes, items, quests, and NPCs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1e",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["productivity", "developer", "games"],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Game Mechanics Generator",
+      "short_name": "Mechanics",
+      "description": "Generate random game mechanics",
+      "url": "/generators/game-mechanics",
+      "icons": [
+        {
+          "src": "/icons/mechanics-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Enemy Generator",
+      "short_name": "Enemies",
+      "description": "Generate random enemy ideas",
+      "url": "/generators/enemies",
+      "icons": [
+        {
+          "src": "/icons/enemy-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Quest Generator",
+      "short_name": "Quests",
+      "description": "Generate random quest ideas",
+      "url": "/generators/quests",
+      "icons": [
+        {
+          "src": "/icons/quest-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Random All",
+      "short_name": "Random",
+      "description": "Generate random ideas from all categories",
+      "url": "/generators",
+      "icons": [
+        {
+          "src": "/icons/random-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

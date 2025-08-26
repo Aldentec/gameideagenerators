@@ -9,6 +9,13 @@ const Footer = () => {
         <p className="creator-credit">
           Created by <a href="https://doriansmith.dev" target="_blank" rel="noopener noreferrer">Dorian Smith</a>
         </p>
+        <p className="footer-links">
+          <a href="#about">About</a>
+          <span>•</span>
+          <a href="#contact">Contact</a>
+          <span>•</span>
+          <a href="#github">GitHub</a>
+        </p>
       </div>
     </footer>
   );

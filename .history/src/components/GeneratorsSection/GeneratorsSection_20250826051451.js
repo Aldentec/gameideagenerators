@@ -226,6 +226,12 @@ const GeneratorsSection = () => {
         ))}
       </div>
 
+      {/* Active Category Description */}
+      <div className="category-description">
+        <h3>{categories[activeCategory].name}</h3>
+        <p>{categories[activeCategory].description}</p>
+      </div>
+
       {/* Generator Grid for Active Category */}
       <div className="randomizer-grid">
         {categories[activeCategory].generators.map((randomizer, index) => (

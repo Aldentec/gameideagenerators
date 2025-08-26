@@ -44,6 +44,40 @@ const About = () => {
           </div>
         </div>
 
+        <div className="features-section">
+          <h3>What Makes Us Different</h3>
+          <div className="features-grid">
+            <div className="feature-item">
+              <div className="feature-icon">🎲</div>
+              <div className="feature-content">
+                <h4>Quality Over Quantity</h4>
+                <p>Every suggestion is carefully crafted to be specific, actionable, and inspiring</p>
+              </div>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">⚡</div>
+              <div className="feature-content">
+                <h4>Instant Inspiration</h4>
+                <p>No sign-ups, no delays - just click and get creative ideas immediately</p>
+              </div>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">🔧</div>
+              <div className="feature-content">
+                <h4>Developer-Focused</h4>
+                <p>Built by developers, for developers - we understand your creative challenges</p>
+              </div>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">🎨</div>
+              <div className="feature-content">
+                <h4>Holistic Approach</h4>
+                <p>From mechanics to monetization - we cover every aspect of game development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="story-section">
             <h3>Our Story</h3>
             <p>

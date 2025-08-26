@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
 import './RandomizerCard.css';
 
-/* global gtag, ga */
-
-const RandomizerCard = ({ title, icon, description, generator, color, category }) => {
+const RandomizerCard = ({ title, icon, description, generator, color }) => {
   const [result, setResult] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
 
   // Function to track generator usage
-  const trackGeneratorUsage = (generatorName, generatorCategory) => {
+  const trackGeneratorUsage = (generatorName) => {
     // Check if gtag is available (Google Analytics 4)
-    if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
+    if (typeof gtag !== 'undefined') {
       // Track the specific generator used
-      window.gtag('event', 'generator_used', {
+      gtag('event', 'generator_used', {
         event_category: 'Generator Interaction',
         event_label: generatorName,
         generator_type: generatorName.toLowerCase().replace(/\s+/g, '_'),
-        generator_category: generatorCategory || 'Unknown',
         custom_parameter_1: 'idea_generated'
       });
 
       // Track general generator engagement
-      window.gtag('event', 'generate_idea', {
+      gtag('event', 'generate_idea', {
         event_category: 'User Engagement',
         event_label: 'Idea Generation',
         value: 1
       });
 
       // Track for conversion goals (if someone uses multiple generators)
-      window.gtag('event', 'creative_engagement', {
+      gtag('event', 'creative_engagement', {
         event_category: 'Creative Tools',
         event_label: generatorName,
         engagement_type: 'active_use'
@@ -36,8 +33,8 @@ const RandomizerCard = ({ title, icon, description, generator, color, category }
     }
 
     // Fallback for older Google Analytics (gtag should be available with GA4)
-    if (typeof window !== 'undefined' && typeof window.ga !== 'undefined') {
-      window.ga('send', 'event', 'Generator', 'Generate', generatorName, 1);
+    if (typeof ga !== 'undefined') {
+      ga('send', 'event', 'Generator', 'Generate', generatorName, 1);
     }
 
     // Console log for development/debugging
@@ -50,7 +47,7 @@ const RandomizerCard = ({ title, icon, description, generator, color, category }
     setIsAnimating(true);
     
     // Track the generator usage
-    trackGeneratorUsage(title, category);
+    trackGeneratorUsage(title);
     
     setTimeout(() => {
       const newResult = generator();
